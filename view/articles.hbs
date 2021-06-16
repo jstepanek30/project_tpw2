@@ -1,0 +1,12 @@
+{{>header}}
+    <a href="/articles/new">Create new article</a>
+    {{#each articles}}
+        <div>
+            <h2>{{name}}</h2>
+            <h3>{{description}}</h3>
+            <p>{{content}}</p>
+        </div>
+    {{/each}}
+{{>footer}}
+
+
