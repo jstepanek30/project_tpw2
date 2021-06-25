@@ -1,15 +1,9 @@
 {{>header}}
     <nav>
-        <ul>
-            <li>
-                <a href="/articles/edit/{{article._id}}">Edit Article</a>
-                </li>
-            <li>
-                <form action="/articles/delete/{{article._id}}?_method=DELETE" method="POST">
-                    <button type="submit">Delete Article</button>
-                </form>
-            </li>
-        </ul>
+        <a class="btn btn-primary btn-sm" href="/articles/edit/{{article._id}}">Edit Article</a>
+        <form action="/articles/delete/{{article._id}}?_method=DELETE" method="POST">
+            <button class="btn btn-danger btn-sm" type="submit">Delete Article</button>
+        </form>
     </nav>
     <div>
         <h2>{{article.name}}</h2>

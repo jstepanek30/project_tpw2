@@ -1,34 +1,12 @@
-{{>header}}
-<nav>
-    <a class="btn btn-primary btn-sm" href="/articles/new">Create new article</a>
-</nav>
-    
-    {{#each articles}}
-        <div>
-            <h2><a href="/articles/id/{{_id}}">{{name}}</a></h2>
-            <h3>{{description}}</h3>
-            <p>{{content}}</p>
-        </div>
-    {{/each}}
-    <nav>
-        <h2 class="numberOfArticles">Number of articles: {{numberOfArticles}}</h2>
-        <ul>
-            <li><a class="prev" href="/articles/read/{{id}}">Prev</a></li>
-            <li><a class="next" href="/articles/read/{{id}}">Next</a></li>
-        </ul>
-    </nav>
-{{>footer}}
-
-<!--
-<script>
+export function articleJs(){
     const prev = document.querySelector('.prev');
     const next = document.querySelector('.next');
     const numberOfArticles =  document.querySelector('.numberOfArticles');
     const max = Math.ceil(Number(numberOfArticles.textContent.slice(20))/5);
-
+    
     if(prev.getAttribute('href').slice(15)<2) prev.remove();
     if(Number(next.getAttribute('href').slice(15))===max) next.remove();
-    
+        
     prev.addEventListener('click', (e)=>{
         let id = prev.getAttribute('href').slice(15);
         id--;
@@ -39,7 +17,4 @@
         id++;
         next.setAttribute('href',`/articles/read/${id}`);
     })
-</script>
--->
-
-
+}
