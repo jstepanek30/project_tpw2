@@ -1,0 +1,21 @@
+{{>header}}
+    <nav>
+        <ul>
+            <li>
+                <a href="/articles/edit/{{article._id}}">Edit Article</a>
+                </li>
+            <li>
+                <form action="/articles/delete/{{article._id}}?_method=DELETE" method="POST">
+                    <button type="submit">Delete Article</button>
+                </form>
+            </li>
+        </ul>
+    </nav>
+    <div>
+        <h2>{{article.name}}</h2>
+        <h3>{{article.description}}</h3>
+        <p>{{article.content}}</p>
+    </div>
+{{>footer}}
+
+
