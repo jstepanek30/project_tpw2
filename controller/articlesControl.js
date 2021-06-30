@@ -1,6 +1,7 @@
 const Article = require('../model/Article')
 
 const errorHandler = (err) => {
+    console.log(err)
     let errors = { name:'', description:'', content:'' }
 
     if(err.code === 11000){
@@ -17,11 +18,13 @@ const errorHandler = (err) => {
 const postNewArticle = async (req,res) => {
     const { name, description, content } = req.body;
     try {
+
         const article = new Article({ name, description, content })
         await article.save()
         res.status(200).redirect(`/articles/id/${article.id}`)
     } catch (error) {
         const errors = errorHandler(error)
+        console.log(errors)
         res.status(400).render('new', { errors, name, description, content })
     }
 }

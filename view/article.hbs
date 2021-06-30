@@ -2,7 +2,7 @@
     <div class="container">
         <h2>{{article.name}}</h2>
         <h3>{{article.description}}</h3>
-        <p>{{article.content}}</p>
+        <p>{{{article.content}}}</p>
         <div class="row">   
             <a class="btn btn-secondary ml-2" href="/articles/edit/{{article._id}}">Edit Article</a>
             <form action="/articles/delete/{{article._id}}?_method=DELETE" method="POST">
