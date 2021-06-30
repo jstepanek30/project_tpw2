@@ -17,6 +17,6 @@ articleSchema = new mongoose.Schema({
         required: true,
     }
 
-})
+}, { timestamps: { createdAt: 'createdAt', currentTime: () => new Date() } })
 
 module.exports = mongoose.model('Article', articleSchema);

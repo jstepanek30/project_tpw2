@@ -1,15 +1,28 @@
-<form action="/register" method="POST">
-   <h2>Register</h2>
-   <label for="email">Email</label>
-   <input type="text" name="email" required>
-   <div class="emailError">{{errors.email}}</div>
 
-   <label for="password">Password</label>
-   <input class="pwd-check" type="password" name="password" required>
-
-   <input class="pwd-check" type="password" name="passwordVerify" required>
-
-   <div class="passwordError">{{errors.password}}</div>
-
-   <button>Register</button>
-</form>
+    <div class="row">
+      <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
+        <div class="card card-signin my-5">
+          <div class="card-body">
+            <h5 class="card-title text-center">Register</h5>
+            <form class="form-signin" action="/register" method="POST">
+              <div class="form-label-group">
+                 <label for="email">Email address</label>
+                  <input type="email" name="email" class="form-control" placeholder="Email address" required>
+                  <div class="emailError"><p class="text-danger font-weight-bold">{{errors.email}}</p></div>
+              </div>
+              <div class="form-label-group">
+                  <label for="password">Password</label>
+                  <input id="pwd" type="password" name="password" class="form-control" placeholder="Password" required>
+              </div>
+              <div class="form-label-group">
+                  <label for="passwordVerify">Retype password</label>
+                  <input id="pwd-check" type="password" name="passwordVerify" class="form-control" placeholder="Password" required>
+                  <div class="passwordError"><p class="text-danger font-weight-bold">{{errors.password}}</p></div>
+              </div>
+              <hr class="my-4">
+              <button class="btn btn-lg btn-primary btn-block text-uppercase" type="submit">Register</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>

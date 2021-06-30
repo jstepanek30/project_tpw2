@@ -1,45 +1,17 @@
 {{>header}}
-<nav>
-    <a class="btn btn-primary btn-sm" href="/articles/new">Create new article</a>
-</nav>
-    
+ <h1 class="mb-4">Articles</h1>
+    <a href="/articles/new" class="btn btn-success mb-4">Create new article</a>
     {{#each articles}}
-        <div>
-            <h2><a href="/articles/id/{{_id}}">{{name}}</a></h2>
-            <h3>{{description}}</h3>
-            <p>{{content}}</p>
+        <div class="card mb-4">
+            <div class="card-body">
+                <h2 class="card-title"><a href="/articles/id/{{_id}}"><p>{{name}}</p></a></h2>
+                 <div class="card-subtitle text-muted mb-2"><p>{{createdAt}}</p></div>  
+                <div class="card-text mb-2"><p></p></div>
+            </div>
         </div>
     {{/each}}
-    <nav>
-        <h2 class="numberOfArticles">Number of articles: {{numberOfArticles}}</h2>
-        <ul>
-            <li><a class="prev" href="/articles/read/{{id}}">Prev</a></li>
-            <li><a class="next" href="/articles/read/{{id}}">Next</a></li>
-        </ul>
-    </nav>
+        <p class="numberOfArticles">Number of articles: {{numberOfArticles}}</p>
+        <a id="prev" class="btn btn-secondary" href="/articles/read/{{id}}">Prev</a>
+        <a id="next" class="btn btn-secondary" href="/articles/read/{{id}}">Next</a>
 {{>footer}}
-
-<!--
-<script>
-    const prev = document.querySelector('.prev');
-    const next = document.querySelector('.next');
-    const numberOfArticles =  document.querySelector('.numberOfArticles');
-    const max = Math.ceil(Number(numberOfArticles.textContent.slice(20))/5);
-
-    if(prev.getAttribute('href').slice(15)<2) prev.remove();
-    if(Number(next.getAttribute('href').slice(15))===max) next.remove();
-    
-    prev.addEventListener('click', (e)=>{
-        let id = prev.getAttribute('href').slice(15);
-        id--;
-        prev.setAttribute('href',`/articles/read/${id}`);
-    })
-    next.addEventListener('click', (e)=>{
-        let id = next.getAttribute('href').slice(15);
-        id++;
-        next.setAttribute('href',`/articles/read/${id}`);
-    })
-</script>
--->
-
 

@@ -1,16 +1,17 @@
 <form action="/articles/new" method="POST">
-   <h2>New Article</h2>
-   <label for="name">Header</label>
-   <input type="text" name="name" value="{{name}}" required>
-   <div class="nameError">{{errors.name}}</div>
+   <div class="form-group">
+      <label for="name">Header</label>
+      <input class="form-control" type="text" name="name" value="{{name}}" required>
+      <div class="nameError">{{errors.name}}</div>
 
-   <label for="description">Description</label>
-   <input type="text" name="description" value="{{description}}" required>
-   <div class="descriptionError">{{errors.description}}</div>
+      <label for="description">Description</label>
+      <textarea class="form-control" name="description" cols="30" rows="2" required>{{description}}</textarea>
+      <div class="descriptionError">{{errors.description}}</div>
 
-   <label for="content">Article</label>
-   <textarea name="content"cols="30" rows="10">{{content}}</textarea>
-   <div class="contentError">{{errors.content}}</div>
-
-   <button>Submit</button>
+      <label for="content">Article</label>
+      <textarea  class="form-control" name="content"cols="30" rows="10">{{content}}</textarea>
+      <div class="contentError">{{errors.content}}</div>
+   </div>
+   <button type="submit" class="btn btn-primary">Save</button>
+   <a href="/" class="btn btn-secondary">Cancel</a>
 </form>

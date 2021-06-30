@@ -1,15 +1,16 @@
 {{>header}}
-    <nav>
-        <a class="btn btn-primary btn-sm" href="/articles/edit/{{article._id}}">Edit Article</a>
-        <form action="/articles/delete/{{article._id}}?_method=DELETE" method="POST">
-            <button class="btn btn-danger btn-sm" type="submit">Delete Article</button>
-        </form>
-    </nav>
-    <div>
+    <div class="container">
         <h2>{{article.name}}</h2>
         <h3>{{article.description}}</h3>
         <p>{{article.content}}</p>
+        <div class="row">   
+            <a class="btn btn-secondary ml-2" href="/articles/edit/{{article._id}}">Edit Article</a>
+            <form action="/articles/delete/{{article._id}}?_method=DELETE" method="POST">
+            <button class="btn btn-danger" type="submit">Delete Article</button>
+            </form>
+        </div>     
     </div>
+    
 {{>footer}}
 
 

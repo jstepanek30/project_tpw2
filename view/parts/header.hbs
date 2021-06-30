@@ -8,17 +8,20 @@
     <script type="module" src="/main.js" defer></script>
     <title>Document</title>
 </head>
-<body>
- <header>
-     <h1>Welcome to my personal website</h1>
-     <nav class="navbar navbar-expand-lg navbar-light bg-light">
-         <ul class="navbar-nav mr-auto">
-             <li class="nav-item"><a class="nav-link" href="/">Main</a></li>
-             <li class="nav-item"><a class="nav-link" href="/login">Login</a></li>
-             <li class="nav-item"><a class="nav-link" href="/register">Register</a></li>
-             <li class="nav-item"><a class="nav-link" href="/articles/read/1">Articles</a></li>
-             <li class="nav-item"><a class="nav-link" href="/logout">Logout</a></li>
-         </ul>
-     </nav>
-     <p>{{user.email}}</p>
- </header>
+<body class="p-3 mb-2 bg-primary">
+    <div class="container border text-dark bg-light rounded">
+        <header>
+            <h1>Blog about Information Technology</h1>
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="/login">Login</a></li>
+                        <li class="nav-item"><a class="nav-link" href="/register">Register</a></li>
+                        <li class="nav-item"><a class="nav-link" href="/articles/read/1">Articles</a></li>
+                        <li class="nav-item"><a class="nav-link" href="/logout">Logout</a></li>
+                    </ul>
+                </div>
+            </nav>
+            <p>{{user.email}}</p>
+        </header>

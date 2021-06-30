@@ -1,24 +1,3 @@
 {{>header}}
 {{>register}}
 {{>footer}}
-
-<script>
-    const form = document.querySelector('form')
-    const pass = document.querySelectorAll('.pwd-check');
-    const button = document.querySelector('button');
-    const passDiv = document.querySelector('.passwordError');
-
-    button.addEventListener('click', (e)=>{
-        if(pass[0].value!==pass[1].value){
-            e.preventDefault();
-            passDiv.textContent = 'Passwords must match!';
-            pass[0].value = '';
-            pass[1].value = '';
-            return ;
-        }else{
-            form.submit()
-            return;
-        }
-    })
-    
-</script>

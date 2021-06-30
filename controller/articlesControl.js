@@ -38,9 +38,9 @@ const getArticles = async (req,res) => {
         id = 1;
     }
     else if (id>Math.ceil(numberOfArticles/5)){
-        id = Math.ceil(numberOfArticles/5)
+        id = Math.max(Math.ceil(numberOfArticles/5),1)
     }
-    const articles = await Article.find({}).limit(5).skip(id*5-5);
+    const articles = await Article.find({}).sort({createdAt:'desc'}).limit(5).skip(id*5-5);
     res.render('articles', {articles, id, numberOfArticles});
 }
 const getSpecificArticle = async (req,res) => {

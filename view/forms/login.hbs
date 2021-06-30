@@ -1,12 +1,24 @@
-<form action="/login" method="POST">
-   <h2>Login</h2>
-   <label for="email">Email</label>
-   <input type="text" name="email" required>
-   <div class="emailError">{{errors.email}}</div>
 
-   <label for="password">Password</label>
-   <input type="password" name="password" required>
-   <div class="passwordError">{{errors.password}}</div>
-
-   <button>Login</button>
-</form>
+    <div class="row">
+      <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
+        <div class="card card-signin my-5">
+          <div class="card-body">
+            <h5 class="card-title text-center">Log In</h5>
+            <form class="form-signin" action="/login" method="POST">
+              <div class="form-label-group">
+                 <label for="email">Email address</label>
+                  <input type="email" name="email" class="form-control" placeholder="Email address" required>
+                  <div class="emailError"><p class="text-danger font-weight-bold">{{errors.email}}</p></div>
+              </div>
+              <div class="form-label-group">
+                  <label for="password">Password</label>
+                  <input type="password" name="password" class="form-control" placeholder="Password" required>
+                  <div class="passwordError"><p class="text-danger font-weight-bold">{{errors.password}}</p></div>
+              </div>
+              <hr class="my-4">
+              <button class="btn btn-lg btn-primary btn-block text-uppercase" type="submit">Log in</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
