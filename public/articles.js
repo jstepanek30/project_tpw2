@@ -1,8 +1,6 @@
 export function articleJs(){
     const prev = document.querySelector('#prev');
     const next = document.querySelector('#next');
-    console.log(prev);
-    console.log(next);
     const numberOfArticles =  document.querySelector('.numberOfArticles');
     const max = Math.ceil(Number(numberOfArticles.textContent.slice(20))/5);
     

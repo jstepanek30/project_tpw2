@@ -2,7 +2,7 @@ const Article = require('../model/Article')
 
 const errorHandler = (err) => {
     console.log(err)
-    let errors = { name:'', description:'', content:'' }
+    let errors = { name:'', content:'' }
 
     if(err.code === 11000){
         errors.name = `Article with name ${errors.name} is already exists.`
@@ -16,16 +16,16 @@ const errorHandler = (err) => {
 }
 
 const postNewArticle = async (req,res) => {
-    const { name, description, content } = req.body;
+    const { name, content } = req.body;
     try {
 
-        const article = new Article({ name, description, content })
+        const article = new Article({ name, content })
         await article.save()
         res.status(200).redirect(`/articles/id/${article.id}`)
     } catch (error) {
         const errors = errorHandler(error)
         console.log(errors)
-        res.status(400).render('new', { errors, name, description, content })
+        res.status(400).render('new', { errors, name, content })
     }
 }
 const getNewArticle = (req,res) => {
@@ -66,11 +66,10 @@ const rmArticle = async (req,res) => {
     }
 }
 const editArticle = async (req,res) => {
-    const { name, description, content } = req.body;
+    const { name, content } = req.body;
     const article = await Article.findById(req.params.id)
     try {
         article.name = req.body.name;
-        article.description = req.body.description;
         article.content = req.body.content;
         await article.save();
         res.render('article', {article : article})  

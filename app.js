@@ -14,6 +14,8 @@ app.use(methodOverride('_method'))
 app.use(cookieParser());
 app.use(express.static('public'));
 
+app.get('*', checkUser)
+
 app.use('/', authRoutes);
 app.use('/articles', articleRoutes);
 
@@ -22,5 +24,5 @@ app.set('views', './view');
 hbs.registerPartials('./view/parts');
 hbs.registerPartials('./view/forms');
 
-app.get('*', checkUser)
+
 app.listen(3000);

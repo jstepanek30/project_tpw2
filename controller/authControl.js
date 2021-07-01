@@ -28,7 +28,7 @@ const createToken = (id) => {
 }
 
 const getMain = (req,res) => {
-    res.render('./index.hbs');
+    res.redirect('articles/read/1');
 }
 
 const getLogin = (req,res) => {

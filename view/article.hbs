@@ -1,16 +1,20 @@
 {{>header}}
-    <div class="container">
-        <h2>{{article.name}}</h2>
-        <h3>{{article.description}}</h3>
+<div class="container mb-4">
+   <h2 class="mb-4">{{article.name}}</h2>
         <p>{{{article.content}}}</p>
-        <div class="row">   
-            <a class="btn btn-secondary ml-2" href="/articles/edit/{{article._id}}">Edit Article</a>
-            <form action="/articles/delete/{{article._id}}?_method=DELETE" method="POST">
+        <div class="row">
+            <div class="mr-1">
+                <a class="btn btn-secondary ml-2" href="/articles/edit/{{article._id}}">Edit Article</a>
+            </div>
+            <div>
+                <form action="/articles/delete/{{article._id}}?_method=DELETE" method="POST">
             <button class="btn btn-danger" type="submit">Delete Article</button>
-            </form>
-        </div>     
-    </div>
-    
+        </form> 
+            </div>
+        </div>
+</div>
+        
+             
 {{>footer}}
 
 

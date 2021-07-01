@@ -10,12 +10,12 @@ articleSchema = new mongoose.Schema({
         unique: [true, 'Please enter a valid header'],
         required: true,
         minlength: [5, 'Minimum length of name is 5 characters.']
-    },
+    },/*
     description:{
         type: String,
         required: true,
         minlength: [5, 'Minimum length of description is 5 characters.']
-    },
+    },*/
     snippet:{
         type: String,
 
@@ -23,6 +23,10 @@ articleSchema = new mongoose.Schema({
     content:{
         type:String,
         required: true,
+    },
+    created:{
+        type: String,
+        default: new Date().toLocaleDateString()
     }
 
 }, { timestamps: { createdAt: 'createdAt', currentTime: () => new Date() } })
