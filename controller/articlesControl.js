@@ -69,8 +69,8 @@ const editArticle = async (req,res) => {
     const { name, content } = req.body;
     const article = await Article.findById(req.params.id)
     try {
-        article.name = req.body.name;
-        article.content = req.body.content;
+        article.name = name;
+        article.content = content;
         await article.save();
         res.render('article', {article : article})  
     } catch (error) {

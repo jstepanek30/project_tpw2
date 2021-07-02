@@ -2,7 +2,7 @@ export function registerJs(){
     const form = document.querySelector('form')
     const pass = document.querySelector('#pwd');
     const passCheck = document.querySelector('#pwd-check');
-    const button = document.querySelector('button');
+    const button = document.querySelector('#register');
     const passDiv = document.querySelector('.passwordError');
 
     button.addEventListener('click', (e)=>{
